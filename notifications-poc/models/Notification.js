@@ -1,3 +1,4 @@
+// notifications-poc/models/Notification.js
 import mongoose from "mongoose";
 
 const notificationSchema = new mongoose.Schema(
@@ -8,7 +9,8 @@ const notificationSchema = new mongoose.Schema(
       enum: ["new_post", "new_comment", "new_like", "new_follower"],
       required: true
     },
-    message: { type: String, required: true }
+    message: { type: String, required: true },
+    read: { type: Boolean, default: false }
   },
   { timestamps: true }
 );
